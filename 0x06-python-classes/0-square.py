@@ -1,6 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
-The Square module.
+This is the Square module.
+
 The Square module contains the Square class
 """
 
