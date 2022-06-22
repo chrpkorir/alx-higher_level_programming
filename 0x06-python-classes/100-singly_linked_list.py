@@ -15,7 +15,7 @@ class Node:
         self.next_node = next_node
 
     @property
-     def data(self):
+    def data(self):
         """Get/set the data of the Node."""
         return (self.__data)
 
