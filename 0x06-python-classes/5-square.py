@@ -9,7 +9,8 @@ The Square module contains the Square class
 class Square:
     """ This is the Square class
     """
-    def __init__(self, size=0):
+
+    def __init__(self, size):
         """ The __init__ method
         """
         self.size = size
@@ -18,31 +19,27 @@ class Square:
     def size(self):
         """ size getter
         """
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
         """ size setter
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
-        """ returns the current square area
-        """
-        size = self.__size
-        return(size ** 2)
+        """ returns the current square area"""
+        return (self.__size * self.__size)
 
     def my_print(self):
         """
-        prints in stdout square with character #
-        """
-        size = self.__size
-        if size == 0:
-            print()
-        else:
-            print("\n".join(["".join(['#' for i in range(size)])
-                            for in range(size)]))
+        prints in stdout square with the # character.""" 
+        if self.__size == 0:
+            print("")
+        for i in range(0, self.__size):
+            [print("#", end="") for j in range(self.__size)]
+            print("")
