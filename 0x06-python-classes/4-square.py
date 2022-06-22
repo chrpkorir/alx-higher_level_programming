@@ -1,8 +1,6 @@
 #!/usr/bin/python
 """
-This is a Square module
-
-The Square module contains the Square class
+Define class Square
 """
 
 
@@ -10,6 +8,7 @@ class Square:
     """
     This is the Square class
     """
+
     def __init__(self, size=0):
         """
         The __init__ method
@@ -28,7 +27,7 @@ class Square:
         """
         size setter
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
