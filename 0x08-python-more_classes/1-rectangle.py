@@ -8,7 +8,7 @@ class Rectangle:
     """
     Square class
     """
-    def __init__(self, width=0, heiht=0):
+    def __init__(self, width=0, height=0):
         """
         Initialize a new square
         Args:
