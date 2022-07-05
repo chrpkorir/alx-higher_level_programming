@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """
-this module contains the function
-append_write
+This module contains a function
+from_json_string
 """
 
 
-def append_write(filename="", text=""):
+def from_json_string(my_str):
     """
-    append text to filename
-    will create filename if it doesn't exist
+    returns an object represented by a JSON string
     """
-    with open(filename, mode='a', encoding="utf-8") as myFile:
-        myFile.write(text)
-    return len([char for char in text])
+    import json
+
+    return json.loads(my_str)

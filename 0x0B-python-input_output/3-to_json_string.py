@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """
-This module contains the write_file
+This module contains funcion
+to_json_string
 """
 
 
-def write_file(filename="", text=""):
+def to_json_string(my_obj):
     """
-    write the text a file
-    returns the number of character written
+    returns the JSON representation of a object (string)
     """
-    with open(filename, mode='w', encoding="utf-8") as myFile:
-        myFile.write(text)
-    count = 0
-    return len([char for char in text])
+    import json
+
+    return json.dumps(my_obj)
