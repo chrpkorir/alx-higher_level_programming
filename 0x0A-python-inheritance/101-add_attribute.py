@@ -3,9 +3,9 @@
 Checks if an attribute can be added to an object.
 """
 
+
 def add_attribute(obj, attr, a_value):
     """Checks if attr of value a_value can be added to obj.
-
 
     Args:
         - obj: object to add attribute to
