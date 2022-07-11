@@ -98,3 +98,24 @@ class Rectangle(Base):
         """Returns a string representation of the rectangle."""
         return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, 
                                            self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args, **kwargs):
+        """ Updates all the info """
+        lista = ["id", "width", "height", "x", "y"]
+        if args and args != "":
+            i = 0
+            for i in range(len(args)):
+                if i < 5:
+                    setattr(self, lista[i], args[i])
+        else:
+            if kwargs and kwargs != "":
+                lista = ["id", "width", "height", "x", "y"]
+                for key, value in kwargs.items():
+                    for i in range(len(lista)):
+                        if key == lista[i]:
+                            setattr(self, lista[i], value)
+
+    def to_dictionary(self):
+        """ Returns the dictionary representation of rectangle"""
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height,
+                'width': self.width}
