@@ -75,4 +75,23 @@ class Rectangle(Base):
         h = self.height
         return ( w * h)
 
+    def display(self):
+        """This function prints a Rectangle."""
+        w = self.width
+        h = self.height
+        horri = self.x
+        vert = self.y
+        i = 0
+        j = 0
+        l = 0
+        for l in range(vert):
+            print()
+        for i in range(h):
+            for j in range(w + horri):
+                if j < horri:
+                    print("{}".format(" "), end="")
+                else:
+                    print("{}".format('#'), end="")
+            print()
+
 
