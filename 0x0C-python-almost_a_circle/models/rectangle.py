@@ -94,4 +94,7 @@ class Rectangle(Base):
                     print("{}".format('#'), end="")
             print()
 
-
+    def __str__(self):
+        """Returns a string representation of the rectangle."""
+        return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, 
+                                           self.id, self.x, self.y, self.width, self.height))
