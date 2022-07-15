@@ -76,31 +76,19 @@ class Rectangle(Base):
         """This function returns the area of a rectangle."""
         w = self.width
         h = self.height
-        return ( w * h)
+        return (w * h)
 
     def display(self):
-        """This function prints a Rectangle."""
-        w = self.width
-        h = self.height
-        horri = self.x
-        vert = self.y
-        i = 0
-        j = 0
-        l = 0
-        for l in range(vert):
+        """Printing the rectangle in stdout"""
+        for i in range(self.y):
             print()
-        for i in range(h):
-            for j in range(w + horri):
-                if j < horri:
-                    print("{}".format(" "), end="")
-                else:
-                    print("{}".format('#'), end="")
-            print()
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        """Returns a string representation of the rectangle."""
-        return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, 
-                                           self.id, self.x, self.y, self.width, self.height))
+        """Update the class Rectangle by overriding the __str__ method"""
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """ Updates all the info """

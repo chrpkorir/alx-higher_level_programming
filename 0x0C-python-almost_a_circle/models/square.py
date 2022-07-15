@@ -21,7 +21,7 @@ class Square(Rectangle):
         self.width = size
         self.height = size
 
-     def __str__(self):
+    def __str__(self):
         """ This function returns a string representation of the polygone"""
         return("[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
                self.id, self.x, self.y, self.width))
