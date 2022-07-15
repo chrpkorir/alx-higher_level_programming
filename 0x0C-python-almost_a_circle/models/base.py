@@ -42,7 +42,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        json_list= []
+        json_list = []
         if json_string:
             json_list = json.loads(json_string)
         return json_list
@@ -63,14 +63,21 @@ class Base:
         """ Load info from file"""
         name = cls.__name__ + ".json"
         listica = []
-        try:
+        if os.path.exists(name):
             with open(name, 'r') as myFile:
-                cuy = cls.json.load(myFile)
-                sabor = cls.from_json_string(cuy)
-                hambre = cls.create(sabor)
-            return hambre
-        except:
-            return listica
+                reader = csv.reader(f, delimiter=',')
+                if cls.__name__ == 'Rectangle':
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ == 'Square':
+                    fields = ['id', 'size', 'x', 'y']
+                for x, row in enumerate(reader):
+                    if x > 0:
+                        i = cls(1, 1)
+                        for j, e in enumerate(row):
+                            if e:
+                                setattr(i, fields[j], int(e))
+                        new_load.append(i)
+        return listica
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
