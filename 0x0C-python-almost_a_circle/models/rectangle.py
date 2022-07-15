@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """This module creates a rectangle."""
+import json
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -7,6 +9,7 @@ class Rectangle(Base):
     It inherits from base.
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initializing class Rectangle."""
         self.width = width
         self.height = height
         self.x = x
