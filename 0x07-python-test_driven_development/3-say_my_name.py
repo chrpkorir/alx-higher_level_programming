@@ -1,32 +1,14 @@
 #!/usr/bin/python3
 """
-Task1 - matrix_divided(matrix, div)
+A function that prints My name is <first name> <last name>
 """
 
 
-def matrix_divided(matrix, div):
-    """Function that divide all the values of the matrix"""
-    err_msg = "matrix must be (list of lists) of integers/floats"
-    if matrix is None or len(matrix) == 0 or len(matrix[0]) == 0:
-        raise TypeError(err_msg)
-    """If len(matrix[0]) != len(matrix[1]):
-    raise TypeError("Each row of the matrix must have the same size")
-    """
-    if type(div) != int and type(div) != float:
-        raise TypeError("div must be a number")
-    if div == 0:
-        raise ZeroDivisionError("division by zero")
-
-    results_matrix = []
-    for listas in matrix:
-        if type(listas) != list:
-            raise TypeError(err_msg)
-        if len(listas) != len(matrix[0]):
-            raise TypeError("Each row of the matrix must have the same size")
-        c_resList = []
-        for val in listas:
-            if type(val) != int and type(val) != float:
-                raise TypeError(err_msg)
-            c_resList.append(round(val/div, 2))
-        results_matrix.append(c_resList)
-    return results_matrix
+def say_my_name(first_name, last_name=""):
+    """function that print complete name"""
+    if type(first_name) != str or first_name == "":
+        raise TypeError("first_name must be a string")
+    if type(last_name) != str:
+        raise TypeError("last_name must be a string")
+    """print(f"{My name is {first_name} {last_name}")"""
+    print("My name is {} {}".format(first_name, last_name))
